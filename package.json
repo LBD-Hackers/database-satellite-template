@@ -1,0 +1,23 @@
+{
+  "name": "satellite-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "env-cmd -f ./.env ts-node src/index.ts",
+    "dev": "env-cmd -f ./.env nodemon src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.0",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.3",
+    "express-solid-auth-wrapper": "github:ConSolidProject/express-solid-auth-wrapper",
+    "pino": "^7.8.1",
+    "pino-pretty": "^7.5.3"
+  }
+}
