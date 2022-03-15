@@ -20,4 +20,12 @@ async function syncResourceUpdate(req, res) {
     res.status(204).send()
 }
 
-export {syncResourceAdd, syncResourceDelete, syncResourceUpdate}
+async function queryDatabase(req, res) {
+    res.status(200).send()
+}
+
+async function getDataset(req, res) {
+    res.status(200).send()
+}
+
+export {syncResourceAdd, syncResourceDelete, syncResourceUpdate, queryDatabase, getDataset}

@@ -3,7 +3,7 @@ import {log} from './logger'
 import cors from 'cors'
 import creds from "../credentials"
 import {setSatellite, extractWebId} from "express-solid-auth-wrapper"
-import {syncResourceAdd, syncResourceDelete, syncResourceUpdate} from "./controller"
+import {syncResourceAdd, syncResourceDelete, syncResourceUpdate, queryDatabase, getDataset} from "./controller"
 const port = process.env.PORT
 
 const app = express();
@@ -24,6 +24,12 @@ app.delete("/", syncResourceDelete)
 
 // the satellite is notified a resource on the Pod has been updated
 app.patch("/", syncResourceUpdate)
+
+// dataset query logic
+app.get("/query", queryDatabase)
+
+// dataset retrieval logic
+app.get("/:dataset", getDataset)
 
 app.listen(port, async () => {
     log.info(`Server listening at http://localhost:${port}`);
